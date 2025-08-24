@@ -14,8 +14,8 @@ public class OrderController {
     }
 
     @PostMapping("/{orderId}")
-    public String placeOrder(@PathVariable String orderId) {
-        orderService.createOrder(orderId);
+    public String placeOrder(@PathVariable String orderId, @RequestParam double amount) {
+        orderService.createOrder(orderId,amount);
         return "Order placed successfully: " + orderId;
     }
 }
